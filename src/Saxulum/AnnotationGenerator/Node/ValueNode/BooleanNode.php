@@ -19,16 +19,16 @@ class BooleanNode extends AbstractValueNode
      */
     public function simplePrint()
     {
-        return $this->value ? 'true': 'false';
+        return $this->value ? 'true' : 'false';
     }
 
     /**
-     * @param int $level
-     * @param int $tabSize
+     * @param  int    $level
+     * @param  int    $tabSize
      * @return string
      */
     public function prettyPrint($level, $tabSize)
     {
-        return $this->value ? 'true': 'false';
+        return $this->value ? 'true' : 'false';
     }
 }

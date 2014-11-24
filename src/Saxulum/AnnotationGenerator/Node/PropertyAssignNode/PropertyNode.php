@@ -31,8 +31,8 @@ class PropertyNode extends AbstractPropertyNode
     }
 
     /**
-     * @param int $level
-     * @param int $tabSize
+     * @param  int    $level
+     * @param  int    $tabSize
      * @return string
      */
     public function prettyPrint($level, $tabSize)

@@ -12,13 +12,13 @@ class ArrayNode extends AbstractValueNode
     protected $nodes;
 
     /**
-     * @param AbstractArrayElementNode[] $nodes
+     * @param  AbstractArrayElementNode[] $nodes
      * @throws \InvalidArgumentException
      */
     public function __construct(array $nodes = array())
     {
-        foreach($nodes as $node) {
-            if(!$node instanceof AbstractArrayElementNode) {
+        foreach ($nodes as $node) {
+            if (!$node instanceof AbstractArrayElementNode) {
                 throw new \InvalidArgumentException('Only Array Element Nodes are allowed!');
             }
             $this->nodes[] = $node;
@@ -31,7 +31,7 @@ class ArrayNode extends AbstractValueNode
     public function simplePrint()
     {
         $serialized = '{';
-        foreach($this->nodes as $node) {
+        foreach ($this->nodes as $node) {
             $serialized .= $node->simplePrint() . ', ';
         }
         $serialized = substr($serialized, 0, -2) . '}';
@@ -40,8 +40,8 @@ class ArrayNode extends AbstractValueNode
     }
 
     /**
-     * @param int $level
-     * @param int $tabSize
+     * @param  int    $level
+     * @param  int    $tabSize
      * @return string
      */
     public function prettyPrint($level, $tabSize)
@@ -50,13 +50,13 @@ class ArrayNode extends AbstractValueNode
         $spacesChildNodes = ($level + 1) * $tabSize;
 
         $serialized = "{\n";
-        foreach($this->nodes as $node) {
+        foreach ($this->nodes as $node) {
             $serialized .= str_repeat(' ', $spacesChildNodes) . $node->prettyPrint($level + 1, $tabSize) . ",\n";
         }
 
         $serialized = substr($serialized, 0, -2) . "\n";
 
-        if($spacesNode) {
+        if ($spacesNode) {
             $serialized .= str_repeat(' ', $spacesNode);
         }
 

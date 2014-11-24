@@ -7,7 +7,7 @@ use Saxulum\AnnotationGenerator\Node\ValueNode\AnnotationNode;
 class AnnotationGenerator
 {
     /**
-     * @param AnnotationNode $node
+     * @param  AnnotationNode $node
      * @return string
      */
     public function simplePrint(AnnotationNode $node)
@@ -16,7 +16,7 @@ class AnnotationGenerator
     }
 
     /**
-     * @param AnnotationNode $node
+     * @param  AnnotationNode $node
      * @return string
      */
     public function prettyPrint(AnnotationNode $node)
